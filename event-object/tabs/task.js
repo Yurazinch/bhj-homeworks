@@ -6,7 +6,7 @@ tabs.forEach((item, index) => {
         if(item.classList.contains('tab_active')) {
           item.classList.remove('tab_active');
         }
-        if(e.currentTarget) {
+        if(e.target) {
           item.classList.add('tab_active');
         } 
         contents.forEach((item, i) => {

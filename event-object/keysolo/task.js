@@ -24,13 +24,14 @@ class Game {
       В случае правильного ввода символа вызываем this.success()
       При неправильном вводе символа - this.fail();
       DOM-элемент текущего символа находится в свойстве this.currentSymbol.
-     */
-    document.addEventListener('keydown', updatePlayer);
-    function updatePlayer(e) {      
-      if(e.key === this.currentSymbol) {
+    */
+    document.addEventListener('keydown', compareSymbol);
+     function compareSymbol(e) { 
+      if(e.key === this.currentSymbol.textContent) {
         this.success();
+        } else {
+        this.fail();            
       }
-      this.fail();            
     }
   }
 
