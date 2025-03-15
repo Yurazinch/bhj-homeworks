@@ -1,16 +1,18 @@
 const books = document.querySelectorAll('.font-size');
 const text = document.querySelector('.book__content')
 
-books.forEach((item, index) => { 
-  if(item.classList.contains('font-size_active') === true) {
-    item.classList.remove('font-size_active');
-  }
-  item.addEventListener('click', (e) => {
+books.forEach((item, index) => {  
+  item.addEventListener('click', (e) => { 
     e.preventDefault();
-    if(text.classList.contains('book_fs-small') === true) {
+    for(let i of books) {
+      if(i.classList.contains('font-size_active')) {
+        i.classList.remove('font-size_active');
+      }
+    }
+    if(text.classList.contains('book_fs-small')) {
       text.classList.remove('book_fs-small');
     }
-    if(text.classList.contains('book_fs-big') === true) {
+    if(text.classList.contains('book_fs-big')) {
       text.classList.remove('book_fs-big');
     }
     if(index === 0) {
