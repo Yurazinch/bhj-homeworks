@@ -3,9 +3,11 @@ const contents = document.querySelectorAll('.tab__content');
 
 tabs.forEach((item, index) => {
       item.addEventListener('click', (e) => {
-        if(item.classList.contains('tab_active')) {
-          item.classList.remove('tab_active');
-        }
+        for(let i of tabs) {
+          if(i.classList.contains('tab_active')) {
+            i.classList.remove('tab_active');
+          }
+        } 
         if(e.target) {
           item.classList.add('tab_active');
         } 
