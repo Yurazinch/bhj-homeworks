@@ -11,8 +11,7 @@ Array.from(hasTooltips).forEach((item, i) => {
     let pointTop = item.getBoundingClientRect().top;
     let pointLeft = item.getBoundingClientRect().left;
     modalText.setAttribute('style', `left: ${pointLeft}; top: ${pointTop}`);    
-    modalText.textContent = tooltipText;
-    console.log(modalText);
-    body.appendChild(modalText);
+    modalText.textContent = tooltipText;    
+    item.insertAdjacentElement('afterEnd', modalText);
   })
 })
