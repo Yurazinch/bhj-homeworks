@@ -12,7 +12,7 @@ Array.from(hasTooltips).forEach((item, i) => {
     } else {
     let pointTop = item.getBoundingClientRect().top;
     let pointLeft = item.getBoundingClientRect().left;
-    tooltip.setAttribute('style', `left: ${pointLeft}px; top: ${pointTop}px`);
+    tooltip.setAttribute('style', `left: ${pointLeft}px; top: ${pointTop + 20}px`);
     tooltip.textContent = titleText;        
     tooltip.classList.add('tooltip_active');
     }    

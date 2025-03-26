@@ -39,21 +39,7 @@ Array.from(cards).forEach((el, index) => {
             <img class="cart__product-image" src=${img}>
             <div class="cart__product-count">${count}</div>
           </div>
-        `);
-        /*
-        let divCart = document.createElement('div');
-        let imgCart = document.createElement('img');
-        let countCart = document.createElement('div');
-        divCart.classList.add('cart__product');
-        imgCart.classList.add('cart__product-image');
-        countCart.classList.add('cart__product-count');
-        divCart.setAttribute('data-id', dataId);
-        imgCart.setAttribute('src', img);
-        countCart.textContent = count;
-        cart.appendChild(divCart);
-        divCart.appendChild(imgCart);
-        divCart.appendChild(countCart); 
-        */ 
+        `);         
       }    
     }    
   })
