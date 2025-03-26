@@ -1,17 +1,20 @@
 const body = document.querySelector('body');
 const hasTooltips = document.querySelectorAll('.has-tooltip');
+body.insertAdjacentHTML('beforeBegin', `<div class="tooltip"></div>`);
+const tooltip = document.querySelector('.tooltip');
 
-Array.from(hasTooltips).forEach((item, i) => {
-  item.addEventListener('click', (e) => {
+Array.from(hasTooltips).forEach((item, i) => {   
+  item.addEventListener('click', (e) => {  
     e.preventDefault();
-    let tooltipText = item.getAttribute('title');    
-    let modalText = document.createElement('div');
-    modalText.classList.add('tooltip');
-    modalText.style.display = 'block';
+    let titleText = item.getAttribute('title');    
+    if(titleText === tooltip.innerText) {
+      tooltip.classList.toggle('tooltip_active');           
+    } else {
     let pointTop = item.getBoundingClientRect().top;
     let pointLeft = item.getBoundingClientRect().left;
-    modalText.setAttribute('style', `left: ${pointLeft}; top: ${pointTop}`);    
-    modalText.textContent = tooltipText;    
-    item.insertAdjacentElement('afterEnd', modalText);
+    tooltip.setAttribute('style', `left: ${pointLeft}px; top: ${pointTop}px`);
+    tooltip.textContent = titleText;        
+    tooltip.classList.add('tooltip_active');
+    }    
   })
 })
