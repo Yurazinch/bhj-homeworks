@@ -3,7 +3,7 @@ const hasTooltips = document.querySelectorAll('.has-tooltip');
 body.insertAdjacentHTML('beforeBegin', `<div class="tooltip"></div>`);
 const tooltip = document.querySelector('.tooltip');
 
-Array.from(hasTooltips).forEach((item, i) => {   
+Array.from(hasTooltips).forEach((item) => {   
   item.addEventListener('click', (e) => {  
     e.preventDefault();
     let titleText = item.getAttribute('title');    
