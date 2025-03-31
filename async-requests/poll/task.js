@@ -6,7 +6,7 @@ xhr.open('GET', 'https://students.netoservices.ru/nestjs-backend/poll');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.send();
 xhr.onreadystatechange = () => {
-  if(xhr.readyState === 4) {
+  if(xhr.readyState === 4  && xhr.status === 200) {
     let response = JSON.parse(xhr.responseText);
     title.textContent = response.data.title;
     for(let i = 0; i < response.data.answers.length; i++) {
@@ -19,5 +19,7 @@ xhr.onreadystatechange = () => {
           alert('Спасибо, ваш голос засчитан!');
         }
     })
+  } else {
+    alert('Ошибка: ' + xhr.status + ' ' + xhr.statusText);
   }
 }
