@@ -8,8 +8,8 @@ let form_Data = new FormData(form);
 fileInput.addEventListener('change', (e) => {
   fileName.textContent = fileInput.value.split('\\').pop();  
 })
-form.addEventListener('submit', upload);
-function upload(form_Data) {
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
   let xhr = new XMLHttpRequest( );
   xhr.upload.onprogress = function(event) {
     progress.value = event.loaded / event.total;
@@ -23,4 +23,4 @@ function upload(form_Data) {
   };
   xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/upload');
   xhr.send(form_Data);  
-}
+});
