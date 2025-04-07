@@ -1,6 +1,6 @@
 const editor = document.getElementById('editor')
 
-editor.addEventListener('change', e => {
+editor.addEventListener('input', e => {
   localStorage.text = editor.value;
 })
               

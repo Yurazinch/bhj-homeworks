@@ -13,14 +13,7 @@ form.addEventListener('submit', (e) => {
   let xhr = new XMLHttpRequest( );
   xhr.upload.onprogress = function(event) {
     progress.value = event.loaded / event.total;
-  }
-  xhr.onloadend = function() {
-    if (xhr.status == 200) {
-      console.log("Успех");
-    } else {
-      console.log("Ошибка " + this.status);
-    }
-  };
+  }  
   xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/upload');
   xhr.send(form_Data);  
 });
